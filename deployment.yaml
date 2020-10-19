@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crawler-deployment
+  labels:
+    app: crawler-app
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: service
+  template:
+    metadata:
+      name: kafka-service-pod
+      labels:
+        app: kafka-service
+        type: service
+
+    spec:
+      containers:
+        - name: kafka-producer-container
+          image: kafka_producer
+
+        - name: kafka-consumer-container
+          image: kafka_consumer
+

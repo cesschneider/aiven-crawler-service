@@ -1,0 +1,5 @@
+bootstrap_servers = "kafka-do-ams-s2-cesschneider-66a1.aivencloud.com:28617"
+security_protocol = "SSL"
+ssl_cafile = "ca.pem"
+ssl_certfile = "service.cert"
+ssl_keyfile = "service.key"
